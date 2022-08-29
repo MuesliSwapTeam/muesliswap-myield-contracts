@@ -1,0 +1,66 @@
+Cabal-Version:       3.0
+Name:                muesliswapmyield
+Version:             1.0
+
+common c
+  default-language: Haskell2010
+  default-extensions:
+    ExplicitForAll
+    ScopedTypeVariables
+    DeriveGeneric
+    StandaloneDeriving
+    DeriveLift
+    GeneralizedNewtypeDeriving
+    DeriveFunctor
+    DeriveFoldable
+    DeriveTraversable
+    LambdaCase
+    MultiParamTypeClasses
+    TypeOperators
+    FlexibleInstances
+    NamedFieldPuns
+    TypeFamilies
+    FlexibleContexts
+    DeriveAnyClass
+    DerivingStrategies
+    DerivingVia
+    DataKinds
+
+library
+  import: c
+  hs-source-dirs: src
+  exposed-modules:
+    MuesliSwapMYield.Minting
+  build-depends:
+    , aeson
+    , base ^>= 4.14.1.0
+    , bytestring
+    , cardano-api
+    , cardano-ledger-alonzo
+    , containers
+    , directory >= 1.3.6.0
+    , hex-text
+    , plutus-core
+    , plutus-ledger
+    , plutus-ledger-api
+    , plutus-tx
+    , plutus-tx-plugin
+    , serialise
+    , text
+    , plutonomy
+
+executable muesliswapmyield
+  import: c
+  hs-source-dirs: src/MuesliSwapMYield
+  main-is:        MuesliSwapMYield.hs
+  ghc-options:    -threaded -rtsopts "-with-rtsopts=-T"
+  build-depends:
+    , cardano-api
+    , cardano-api
+    , cardano-ledger-alonzo
+    , muesliswapmyield
+    , plutus-core
+    , plutus-ledger
+    , plutus-ledger-api
+    , plutus-tx
+    , plutus-tx-plugin
