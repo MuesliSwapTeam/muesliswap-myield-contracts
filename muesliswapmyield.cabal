@@ -34,20 +34,16 @@ library
   build-depends:
     , aeson
     , base ^>= 4.14.1.0
-    , bytestring
     , cardano-api
     , cardano-ledger-alonzo
     , containers
-    , directory >= 1.3.6.0
-    , hex-text
     , plutus-core
     , plutus-ledger
     , plutus-ledger-api
     , plutus-tx
     , plutus-tx-plugin
-    , serialise
-    , text
     , plutonomy
+    , hex-text
 
 executable muesliswapmyield
   import: c
@@ -64,3 +60,6 @@ executable muesliswapmyield
     , plutus-ledger-api
     , plutus-tx
     , plutus-tx-plugin
+    , base ^>= 4.14.1.0
+    , serialise
+    , bytestring
